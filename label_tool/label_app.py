@@ -64,13 +64,15 @@ class LabelToolApp:
         inputs_frame = tk.Frame(self.root)
         inputs_frame.pack(fill="x", padx=10, pady=(0, 10))
 
-        tk.Label(inputs_frame, text="Label 1 (note pitch):").grid(row=0, column=0, sticky="w", padx=(0, 6), pady=3)
+        tk.Label(inputs_frame, text="Symbol type:").grid(row=0, column=0, sticky="w", padx=(0, 6), pady=3)
+        self.symbol_entry = tk.Entry(inputs_frame, width=12, font=("Segoe UI", 12))
+        self.symbol_entry.grid(row=1, column=1, sticky="w", pady=3)
+
+        tk.Label(inputs_frame, text="Note pitch:").grid(row=1, column=0, sticky="w", padx=(0, 6), pady=3)
         self.note_entry = tk.Entry(inputs_frame, width=12, font=("Segoe UI", 12))
         self.note_entry.grid(row=0, column=1, sticky="w", pady=3)
 
-        tk.Label(inputs_frame, text="Label 2 (symbol type):").grid(row=1, column=0, sticky="w", padx=(0, 6), pady=3)
-        self.symbol_entry = tk.Entry(inputs_frame, width=12, font=("Segoe UI", 12))
-        self.symbol_entry.grid(row=1, column=1, sticky="w", pady=3)
+   
 
         buttons_frame = tk.Frame(inputs_frame)
         buttons_frame.grid(row=0, column=2, rowspan=2, padx=(20, 0), sticky="w")
@@ -112,19 +114,19 @@ class LabelToolApp:
             reader = csv.DictReader(f)
             for row in reader:
                 filename = (row.get("filename") or "").strip()
-                note_label = (row.get("label_1") or "").strip()
-                symbol_label = (row.get("label_2") or "").strip()
+                note_label = (row.get("sym_type") or "").strip()
+                symbol_label = (row.get("note_pitch") or "").strip()
                 if filename:
                     result[filename] = (note_label, symbol_label)
         return result
 
     def _save_all_labels(self) -> None:
         with self.output_csv.open("w", encoding="utf-8", newline="") as f:
-            writer = csv.DictWriter(f, fieldnames=["filename", "label_1", "label_2"])
+            writer = csv.DictWriter(f, fieldnames=["filename", "sym_type", "note_pitch"])
             writer.writeheader()
             for name in sorted(self.labels.keys()):
                 label_1, label_2 = self.labels[name]
-                writer.writerow({"filename": name, "label_1": label_1, "label_2": label_2})
+                writer.writerow({"filename": name, "sym_type": label_1, "note_pitch": label_2})
 
     def _load_image_for_widget(self, path: Path) -> ImageTk.PhotoImage:
         image = Image.open(path)
