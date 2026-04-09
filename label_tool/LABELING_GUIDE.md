@@ -12,7 +12,7 @@ Ten dokument opisuje, jak wpisywać labele w narzędziu do par obrazów.
 | Kasownik | `n` | `n` = ♮ | `n` | kasownik |
 | Długość nuty | `[wysokość]/[długość]` | `1`, `2`, `4`, `8`, `16` | `4/C4` | Nuta z długością rytmiczną |
 | Kropka rytmiczna | `.` lub `..` | `.` = 1 kropka, `..` = 2 kropki | `.` | Wydłużenie wartości nuty |
-| Pauza | `r[długość]` | Te same długości co nuty | `R/0.25`, `R/1` | Pauza o danej wartości |
+| Pauza | `r[długość]` | Te same długości co nuty | `R4`, `R1` | Pauza o danej wartości |
 | Metrum | `M:x/y` | np. `4/4`, `3/4`, `6/8` | `M:4/4` | Oznaczenie metrum |
 | Klucz | `K:t` lub `K:b` | `t` = treble, `b` = bass  | `K:t` | Klucz wiolinowy, basowy itd.|
 
