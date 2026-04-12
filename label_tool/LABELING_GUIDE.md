@@ -1,6 +1,6 @@
 # Instrukcja labelowania (OMR)
 
-Ten dokument opisuje, jak wpisywać labele w narzędziu do par obrazów.
+Ten dokument opisuje, jak wpisywać labele w narzędziu do labelowania.
 
 ## Tabela zasad
 
@@ -40,3 +40,7 @@ Ten dokument opisuje, jak wpisywać labele w narzędziu do par obrazów.
 
 ![Alt text](notes_guide.png)
 
+## Oznaczenia dla Common time, Cut time i Bar line
+![Alt text](other_signs.png)
+
+*używanie wielkich czy małych liter nie powinno robić różnicy
