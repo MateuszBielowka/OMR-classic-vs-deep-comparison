@@ -1,2 +1,7 @@
 .idea/
 .git/
+.vscode/
+
+data/archive/
+data/HOMUS/
+data/HOMUS_images/
